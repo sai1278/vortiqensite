@@ -13,7 +13,13 @@ logger = logging.getLogger("uvicorn.error")
 rate_limit_store = {}
 
 def enforce_rate_limit(request: Request):
-    client_ip = request.client.host if request.client else "unknown"
+    forwarded_for = request.headers.get("x-forwarded-for")
+    if forwarded_for:
+        client_ip = forwarded_for.split(",")[0].strip()
+    elif request.client:
+        client_ip = request.client.host
+    else:
+        client_ip = "unknown"
     now = time.monotonic()
     window_start = now - settings.RATE_LIMIT_WINDOW_SECONDS
     recent_hits = [
