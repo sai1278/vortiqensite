@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import ProjectCatalog from './components/ProjectCatalog';
 import ProjectEstimator from './components/ProjectEstimator';
 import TrustBadges from './components/TrustBadges';
-import LeadershipTeam from './components/LeadershipTeam';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import IntakeForm from './components/IntakeForm';
@@ -62,7 +61,6 @@ export default function App() {
           onOpenForm={handleOpenForm}
         />
 
-        <LeadershipTeam />
 
         <FAQSection
           onOpenForm={handleOpenForm}
