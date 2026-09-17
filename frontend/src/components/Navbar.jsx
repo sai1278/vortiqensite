@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Terminal, Sparkles, Calculator, HelpCircle, Layers, Menu, X, ShieldCheck } from 'lucide-react';
+import { Sparkles, Calculator, HelpCircle, Layers, Menu, X, ShieldCheck } from 'lucide-react';
+import VortiqenLogo from './VortiqenLogo';
 
 export default function Navbar({ onOpenForm }) {
   const [scrolled, setScrolled] = useState(false);
@@ -35,16 +36,11 @@ export default function Navbar({ onOpenForm }) {
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-700 via-sky-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-200">
-              <Terminal className="w-5 h-5 text-white" />
+              <VortiqenLogo className="w-6 h-6 text-white drop-shadow-md" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-xl tracking-tight text-slate-950 flex items-center gap-1.5 font-sans">
-                NexGen <span className="gradient-text">Architects</span>
-              </span>
-              <span className="text-[10px] text-slate-500 font-mono -mt-1 tracking-wider uppercase">
-                Production-Ready Capstone Labs
-              </span>
-            </div>
+            <span className="font-extrabold text-xl tracking-tight text-slate-950 flex items-center gap-1.5 font-sans">
+              Vortiqen
+            </span>
           </a>
 
           {/* Desktop Nav Links */}
