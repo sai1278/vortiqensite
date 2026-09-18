@@ -30,8 +30,8 @@ class NotificationService:
         try:
             # 1. Build Student Confirmation Email
             msg = MIMEMultipart("alternative")
-            msg["Subject"] = f"Project Requirement Confirmation - NexGen Architects ({req.selected_project_title})"
-            msg["From"] = f"NexGen Architects <{self.sender_email}>"
+            msg["Subject"] = f"Project Requirement Confirmation - Vortiqen ({req.selected_project_title})"
+            msg["From"] = f"Vortiqen <{self.sender_email}>"
             msg["To"] = req.email
             msg["Reply-To"] = self.sender_email
             msg["Date"] = email.utils.formatdate(localtime=True)
@@ -39,7 +39,7 @@ class NotificationService:
 
             text_plain = f"""Hello {req.student_name},
 
-Thank you for reaching out to NexGen Architects! We have received your capstone project details and our senior technical lead is reviewing your requirements.
+Thank you for reaching out to Vortiqen! We have received your capstone project details and our senior technical lead is reviewing your requirements.
 
 Project Details:
 - College: {req.college_name}
@@ -51,7 +51,7 @@ Project Details:
 Our engineering lead will reach out to you via WhatsApp at {req.phone_number} or reply to this email within 2 hours.
 
 Best regards,
-NexGen Architects Team
+Vortiqen Team
 """
 
             html_content = f"""<!DOCTYPE html>
@@ -60,7 +60,7 @@ NexGen Architects Team
     <div style="max-width: 600px; margin: 0 auto; background-color: #1e293b; border-radius: 16px; padding: 32px; border: 1px solid #334155;">
         <h2 style="color: #818cf8; margin-top: 0;">Requirement Registered Successfully!</h2>
         <p>Dear <strong>{req.student_name}</strong>,</p>
-        <p>Thank you for reaching out to <strong>NexGen Architects</strong>. We have received your capstone project details and our senior technical lead is reviewing your requirements.</p>
+        <p>Thank you for reaching out to <strong>Vortiqen</strong>. We have received your capstone project details and our senior technical lead is reviewing your requirements.</p>
 
         <div style="background-color: #090d16; padding: 16px; border-radius: 12px; margin: 20px 0; border: 1px solid #334155;">
             <h3 style="color: #38bdf8; margin-top: 0; font-size: 14px;">Project Summary</h3>
@@ -77,7 +77,7 @@ NexGen Architects Team
 
         <hr style="border: 0; border-top: 1px solid #334155; margin: 24px 0;" />
         <p style="font-size: 11px; color: #64748b; text-align: center;">
-            © {req.student_name}'s Capstone Support • NexGen Architects Labs
+            © {req.student_name}'s Capstone Support • Vortiqen
         </p>
     </div>
 </body>
@@ -90,7 +90,7 @@ NexGen Architects Team
             # 2. Build Admin Alert Email (Sent to self.sender_email)
             admin_msg = MIMEMultipart("alternative")
             admin_msg["Subject"] = f"🚨 NEW LEAD: {req.student_name} ({req.project_domain})"
-            admin_msg["From"] = f"NexGen Portal System <{self.sender_email}>"
+            admin_msg["From"] = f"Vortiqen Portal System <{self.sender_email}>"
             admin_msg["To"] = self.sender_email
             admin_msg["Date"] = email.utils.formatdate(localtime=True)
             admin_msg["Message-ID"] = email.utils.make_msgid(domain="nexgenprojects.dev")
@@ -176,7 +176,7 @@ Notes: {req.custom_requirements or 'None'}
         try:
             msg = MIMEMultipart("alternative")
             msg["Subject"] = f"Instant Help Request - {contact.name}"
-            msg["From"] = f"NexGen Portal System <{self.sender_email}>"
+            msg["From"] = f"Vortiqen Portal System <{self.sender_email}>"
             msg["To"] = self.sender_email
             msg["Reply-To"] = contact.contact if "@" in contact.contact else self.sender_email
             msg["Date"] = email.utils.formatdate(localtime=True)

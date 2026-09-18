@@ -18,7 +18,7 @@ export default function FloatingContact({ onOpenForm }) {
     const name = formData.name.trim() || 'Student';
     const contact = formData.contact.trim();
     const message = formData.message.trim() || 'I need help with a capstone project.';
-    return `Hi NexGen Architects, I am ${name}. ${message}${contact ? ` My contact is ${contact}.` : ''}`;
+    return `Hi Vortiqen, I am ${name}. ${message}${contact ? ` My contact is ${contact}.` : ''}`;
   }, [formData]);
 
   const whatsappHref = `https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || DEFAULT_WHATSAPP_NUMBER}?text=${encodeURIComponent(quickMessage)}`;
