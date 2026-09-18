@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { AlertCircle, CheckCircle2, ExternalLink, Loader2, MessageCircle, Send, Sparkles, X } from 'lucide-react';
 
-const DEFAULT_WHATSAPP_NUMBER = '919876543210';
+const DEFAULT_WHATSAPP_NUMBER = '919121459473';
 
 export default function FloatingContact({ onOpenForm }) {
   const [isOpen, setIsOpen] = useState(false);
